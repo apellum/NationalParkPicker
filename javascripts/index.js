@@ -176,7 +176,7 @@ const submitComment = (event) => {
         //the commentsLeft object will be the parameter for the displayComments function to add a comment to the object
         .then(commentsLeft => displayCommentLeft(commentsLeft))
 }
-
+//pulls the data from the json server
 const loadCommentsLeft = () => {
     
     
@@ -211,6 +211,8 @@ const displayCommentLeft = (commentLeft) => {
 
 }
 
+//submit the comments through the DOM to the json server
+//load the comments through the DOM from the json server
 document.addEventListener('DOMContentLoaded', event => {
     addSubmitCommentEvent();
     loadCommentsLeft();
