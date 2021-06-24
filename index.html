@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="javascripts/index.js"></script>
+</head>
+<body>
+    <div id=header>
+        <h1>Welcome to National Park Picker</h1>
+        <img src="images/BackgroundZion.jpeg" alt="Zion National Park">
+    </div>
+    <div id="color1">
+        <h2>There are 63 National Parks in the United States</h2>
+        <img src="images/National Park.jpeg" alt="NPS" id="nps">
+        <h2>Where have you been?</h2>
+        <p><strong>Click on the tree icon in the map below to check off the National Parks that you've been to.</strong></p>
+        <p><strong> Don't forget to leave a comment and tell us about your trip!</strong></p>
+        <br>
+    </div>
+
+    <div id="map"></div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxDHgudukAEO6mdJwMh6gPwuPIMNmUJOs&callback=initMap"
+    type="text/javascript"></script>
+    <div id="commentSection">
+        <h2>Tell us about your trip!</h2>
+        <form id="commentField">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="commentName">
+            </div>
+            <br>
+            <div>
+                <label for="date">Date Visited:</label>
+                <input type="date" name="date" id="commentDate" placeholder="mm-dd-yyyy">
+            </div>
+            <br>
+            <div>
+                <label for="comment">Comment:</label> <br>
+                <textarea name="comment" id="commentComment" cols="100" rows="20"></textarea>
+            </div>
+            <br>
+            <div>
+                <input type="submit" value="Add Your Comment">
+            </div>
+            <br>
+        </form>
+    </div>
+    <div id="userComments">
+        <h2>Comments</h2>
+        <hr>
+        <div id="commentBelow">
+        
+        </div>
+    </div>
+</body>
+</html>
