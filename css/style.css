@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+h1 {
+    color:#236F21;
+    font-family: 'Staatliches', cursive;;
+    font-size: 60pt;
+    text-align: center;
+    background-color: black;
+    border-image-source: url('/images/BackgroundZion.jpeg');
+}
+#headerPhoto {
+    margin-top: 0;
+    max-height: 50%;
+    max-width: auto;
+    padding-top: 0;
+    text-align: center;
+}
+#map {
+    height: 800px;
+    width: 100%;
+}
+body {
+    background-color:#236F21;
+}
+h2 {
+    font-family: 'Staatliches';
+    text-align: center;
+    font-size: 40pt;
+}
+#color1 {
+    text-align: center;
+    font-size: 15pt;
+}
+#userComments {
+    background-color:white;
+}
+#commentField {
+    color: white;
+}
+#commentComment {
+    background-color: #fff;
+}
+img {
+    height: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#nps {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+}
