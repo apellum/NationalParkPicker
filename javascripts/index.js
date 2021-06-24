@@ -132,3 +132,16 @@ const setMarkers = (map) => {
       }
        //be able to change the image on google maps
 }
+
+//nodes for use in comments
+//calls the div under comments at the bottom of the html file to add our object to
+const commentsDiv = () => document.getElementById('commentBelow');
+// calls the form
+const enterComment = () => document.getElementById('commentField');
+// pulls the name input for the form
+const nameInput = () => document.getElementById('commentName');
+// pulls the date input for the form
+const dateInput = () => document.getElementById('commentDate');
+//split the date and put it into the string as a variable
+//pulls the comment field on the form
+const commentInput = () => document.getElementById('commentComment');
