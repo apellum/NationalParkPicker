@@ -105,3 +105,30 @@ const nationalParks = [
     ["Grand Canyon", 36.1069, -112.1129, 2],
     ["Great Smoky Mountains", 35.6131, -83.5532, 1],
   ];
+
+  //calls a function to add the marker objects to the map
+const setMarkers = (map) => {
+    const image = {
+      url:tree,
+      size: new google.maps.Size(20, 30),
+      // The origin for this image is (0, 0).
+      origin: new google.maps.Point(0, 0),
+      // The anchor for this image is the middle of the tree at (0, 15).
+      anchor: new google.maps.Point(0, 15),
+    };
+    for (let i = 0; i < nationalParks.length; i++) {
+        const nationalPark = nationalParks[i];
+        let marker = new google.maps.Marker({
+          position: { lat: nationalPark[1], lng: nationalPark[2] },
+          map,
+          icon: image,
+          title: nationalPark[0],
+          zIndex: nationalPark[3],
+        });
+        marker.addListener('click', () => marker.setIcon('images/tree-fill.svg'));
+        //marker.addListener('click', () => marker.setIcon('images/tree.svg'));
+        //google.maps.event.removeListener(selectedNationalPark);
+        //marker been to if true filled in if not false and change the image
+      }
+       //be able to change the image on google maps
+}
