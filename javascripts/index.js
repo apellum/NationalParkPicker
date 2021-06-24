@@ -145,3 +145,73 @@ const dateInput = () => document.getElementById('commentDate');
 //split the date and put it into the string as a variable
 //pulls the comment field on the form
 const commentInput = () => document.getElementById('commentComment');
+
+//attaching the submit form event
+const addSubmitCommentEvent = (event) => {
+    enterComment().addEventListener('submit', submitComment);
+}
+
+//create the submit form event and prevent default of refreshing page
+const submitComment = (event) => {
+    event.preventDefault();
+
+    //commentLeft is the object submitted by the submit
+    let commentLeft = {
+        name: nameInput().value,
+        date: dateInput().value,
+        comment: commentInput().value
+    }
+    
+    //post to the json server
+    fetch('http://localhost:3000/commentsLeft', {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(commentLeft)
+    })
+        //promise
+        .then(resp => resp.json())
+        //the commentsLeft object will be the parameter for the displayComments function to add a comment to the object
+        .then(commentsLeft => displayCommentLeft(commentsLeft))
+}
+
+const loadCommentsLeft = () => {
+    
+    
+    fetch('http://localhost:3000/commentsLeft')
+        .then(resp => resp.json())
+        .then(commentsLeft => commentsLeft.forEach(commentLeft => displayCommentLeft(commentLeft)))
+        
+        
+    
+    //not using data and comments left
+}
+
+//iterate over comments then call show comments
+
+const displayCommentLeft = (commentLeft) => {
+    const div = document.createElement('div');
+    const pName = document.createElement('p');
+    const pDate = document.createElement('p');
+    const pComment = document.createElement('p');
+    const hr = document.createElement('h')
+
+    pName.innerText = `Name: ${commentLeft.name}`;
+    pDate.innerText = `Date: ${commentLeft.date}`;
+    pComment.innerText = `Comment: ${commentLeft.comment}`;
+
+    div.appendChild(pName);
+    div.appendChild(pDate);
+    div.appendChild(pComment);
+    div.appendChild(hr);
+
+    commentsDiv().appendChild(div);
+
+}
+
+document.addEventListener('DOMContentLoaded', event => {
+    addSubmitCommentEvent();
+    loadCommentsLeft();
+})
