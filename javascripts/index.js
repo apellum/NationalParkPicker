@@ -12,19 +12,9 @@ function initMap() {
 
         //what control the user has of the map zoom etc.
         mapTypeControl: false,
-        mapTypeControlOptions: {
-          style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
-          position: google.maps.ControlPosition.TOP_CENTER,
-        },
         zoomControl: false,
-        zoomControlOptions: {
-          position: google.maps.ControlPosition.LEFT_CENTER,
-        },
         scaleControl: false,
         streetViewControl: false,
-        streetViewControlOptions: {
-          position: google.maps.ControlPosition.LEFT_TOP,
-        },
         fullscreenControl: false,
     }
 
